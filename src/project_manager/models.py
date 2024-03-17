@@ -15,9 +15,9 @@ class Project(models.Model):
     tasks_completed = models.IntegerField('Number of completed tasks')
     tasks = models.IntegerField(null=True)
     # status
-    countries = models.CharField('Countries applicable for this form', max_length=2000, null=False, blank=False)
-    img = models.ImageField(blank=False, null=False, upload_to= 'src.agency.form_images')
-    document = models.FileField(blank=False, null=True, upload_to= 'src.agency.forms')
+    # countries = models.CharField('Countries applicable for this form', max_length=2000, null=False, blank=False)
+    # img = models.ImageField(blank=False, null=False, upload_to= 'src.agency.form_images')
+    # document = models.FileField(blank=False, null=True, upload_to= 'src.agency.forms')
     
     def __str__(self):
         return f'{self.name}'
