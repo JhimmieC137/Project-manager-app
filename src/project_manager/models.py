@@ -1,4 +1,5 @@
 import datetime
+import uuid
 from typing import Any
 from django.db import models
 from datetime import timezone
@@ -9,8 +10,9 @@ from django.template.loader import render_to_string
 
 # Create your models here.
 class Project(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField('Project name', max_length=100, null=True, blank=False)
+    created_at = models.CharField("Created at date", max_length=50, null=True)
     due_in = models.CharField("Due date", max_length=50)
     tasks_completed = models.IntegerField('Number of completed tasks')
     tasks = models.IntegerField(null=True)

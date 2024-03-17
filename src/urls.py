@@ -15,6 +15,7 @@ from drf_yasg import openapi
 from src.social.views import exchange_token, complete_twitter_login
 from src.project_manager.urls import projects_router
 
+
 schema_view = get_schema_view(
     openapi.Info(title="Pastebin API", default_version='v1'),
     public=True,
