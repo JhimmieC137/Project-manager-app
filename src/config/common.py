@@ -2,6 +2,7 @@ import os
 import sentry_sdk
 import sys
 import dotenv
+from dotenv import load_dotenv
 
 from datetime import timedelta
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -11,8 +12,10 @@ TESTING = sys.argv[1:2] == ['test']
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-if not TESTING:
-    dotenv.read_dotenv(ROOT_DIR)
+load_dotenv()
+# if not TESTING:
+#     dotenv.read_dotenv(ROOT_DIR)
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
