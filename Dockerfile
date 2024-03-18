@@ -21,5 +21,6 @@ COPY ./requirements.txt ./requirements.txt
 RUN pip install -r ./requirements.txt
 
 COPY . ./
-RUN python3 manage.py migrate && \
-	python3 manage.py runserver
+CMD python manage.py collectstatic --no-input && \
+	python manage.py migrate && \
+	python manage.py runserver 0.0.0.0:8000
